@@ -22,7 +22,7 @@ from sqlalchemy.types import (
     TIME,
     TypeEngine,
 )
-from sqlalchemy_redshift.dialect import BIGINT, DOUBLE_PRECISION, SUPER, VARCHAR
+from sqlalchemy_redshift.dialect import BIGINT, DOUBLE_PRECISION, SUPER, VARCHAR, DECIMAL
 
 
 class RedshiftConnector(SQLConnector):
@@ -218,7 +218,7 @@ class RedshiftConnector(SQLConnector):
         if _jsonschema_type_check(jsonschema_type, ("integer",)):
             return BIGINT()
         if _jsonschema_type_check(jsonschema_type, ("number",)):
-            return DOUBLE_PRECISION()
+            return DECIMAL()
         if _jsonschema_type_check(jsonschema_type, ("boolean",)):
             return BOOLEAN()
 
