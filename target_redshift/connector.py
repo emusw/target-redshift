@@ -218,7 +218,7 @@ class RedshiftConnector(SQLConnector):
         if _jsonschema_type_check(jsonschema_type, ("integer",)):
             return BIGINT()
         if _jsonschema_type_check(jsonschema_type, ("number",)):
-            return DECIMAL()
+            return DECIMAL(38,9)
         if _jsonschema_type_check(jsonschema_type, ("boolean",)):
             return BOOLEAN()
 
